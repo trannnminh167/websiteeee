@@ -1,0 +1,144 @@
+/* NAVBAR */
+
+.section__navbar {
+    margin: 50px 6%;
+    border-bottom: 1px solid #6967e6ef; /* line đen cố định */
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Style brand "Lunaris Service" với glow */
+.navbar__brand {
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+
+    /* Chữ tím gradient trong suốt */
+    color: transparent;
+    background: linear-gradient(90deg, rgba(123,134,255,0.9), rgba(151, 150, 151, 0.644));
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Hiệu ứng glow tím */
+    text-shadow: 0 0 10px rgba(123,134,255,0.6),
+                 0 0 20px rgba(123,134,255,0.6),
+                 0 0 30px rgba(200,123,255,0.5);
+
+    /* Animation */
+    background-size: 200% 200%;
+    animation: techGlow 4s infinite alternate;
+}
+
+/* Hiệu ứng fill tím công nghệ */
+@keyframes techGlow {
+    0% {
+        background-position: 0% 50%;
+        text-shadow: 0 0 5px rgba(123,134,255,0.4),
+                     0 0 15px rgba(123,134,255,0.6),
+                     0 0 25px rgba(151, 150, 151, 0.644);
+    }
+    100% {
+        background-position: 100% 50%;
+        text-shadow: 0 0 15px rgba(123,134,255,0.8),
+                     0 0 30px rgba(123,134,255,0.7),
+                     0 0 45px rgba(151, 150, 151, 0.644);
+    }
+}
+
+
+.navbar__icon {
+    width: 70px;
+    max-width: 100%;
+}
+
+.navbar__nav ul {
+    display: inline-flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__link {
+    position: relative;
+    margin: 0 20px;
+    color: #A49FB4;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 10px 0;
+    transition: .3s;
+}
+
+.navbar__link:hover {
+    color: var(--colorDefault);
+    transition: .3s;
+}
+
+/* hiệu ứng line đen dưới link */
+.navbar__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after {
+    width: 100%;
+}
+
+.navbar__menu {
+    display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+    .section__navbar {
+        margin: 30px 6%;
+    }
+    .navbar__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .navbar {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .navbar__nav {
+        display: none;
+    }
+    .navbar__nav--active {
+        z-index: 999;
+        position: absolute;
+        display: block;
+        margin-top: 50px;
+        background-color: var(--backgroundSecond);
+        width: 100%;
+        padding: 25px 0;
+    }
+    .navbar__nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar__link {
+        margin: 10px 30px;
+    }
+    .navbar__menu {
+        display: block;
+    }
+}

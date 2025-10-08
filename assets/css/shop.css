@@ -1,0 +1,367 @@
+/* SHOP */
+
+.section__shop {
+    width: 90%;
+    padding: 100px 5%;
+}
+
+.shop__title {
+    font-weight: bold;
+    font-size: 44px;
+    color: var(--colorMain);
+}
+
+.shop__description {
+    color: var(--colorText);
+    width: 40%;
+    font-weight: normal;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.shop__categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    margin-top: 20px;
+      position: relative;
+}
+
+.shop__category {
+    margin: 0 15px 15px 0;
+    background-color: var(--backgroundSecond);
+    color: var(--colorText);
+    font-weight: 500;
+    padding: 20px 70px;
+    cursor: pointer;
+    color: #aaa;
+    border-radius: 3px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.shop__category.active,
+.shop__category:hover {
+    background: linear-gradient(90deg, #7B86FF, #7B86FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.shop__category:nth-child(1) {
+    margin-left: 0px;
+}
+
+.product-nav {
+    position: relative;
+    display: inline-flex;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 8px;
+    margin-top: 20px;
+}
+
+.product-link {
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.product-link:hover {
+    color: #7B86FF;
+}
+
+/* Thanh highlight */
+.product-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;   /* vừa khớp chữ AIMBOT */
+    height: 3px;
+    background: linear-gradient(90deg, #7B86FF, #C87BFF);
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+/* Hover AIMBOT */
+.product-link:nth-child(1):hover ~ .product-highlight {
+    left: 0;
+    width: 70px;
+}
+
+/* Hover FAKELAG */
+.product-link:nth-child(2):hover ~ .product-highlight {
+    left: 120px;  /* chỉnh đúng vị trí chữ FAKELAG */
+    width: 85px;
+}
+.shop__cards {
+    margin-top: 40px;
+    border-radius: 5px;
+}
+
+.shop__card {
+    background-color: var(--backgroundSecond);
+    padding: 13% 10%;
+    margin-bottom: 22px;
+}
+
+.shop__icon {
+    width: 70px;
+    max-width: 100%;
+}
+
+.shop__card__title {
+    color: var(--colorMain);
+    margin-top: 50px;
+}
+
+.shop__card__description {
+    color: var(--colorText);
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.shop__card__price {
+    margin-top: 50px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--colorText);
+}
+
+.shop__card__price span {
+    margin-left: 2px;
+    color: var(--colorDefault);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.shop__card__purchase {
+    margin-top: 40px;
+    background-color: var(--backgroundMain);
+    color: var(--colorMain);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 20px 25px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+    border: none;
+    /* Remove the default button border */
+    border-radius: 5px;
+}
+
+.shop__card__purchase:hover {
+    opacity: 0.7;
+    transition: .3s;
+}
+
+.shop__card__icon {
+    margin-right: 17px;
+    width: 20px;
+}
+
+/* Overlay tối nền */
+.banking-panel {
+    display: none; /* ẩn mặc định */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay tối nền */
+.banking-panel {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Panel box hiện đại */
+.banking-panel__content {
+    position: relative; /* cần để đặt icon X */
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(123,134,255,0.4);
+    box-shadow: 0 8px 30px rgba(123,134,255,0.3);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px 40px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 0.4s ease;
+}
+
+
+/* Tiêu đề */
+.banking-panel__content h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #7B86FF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Text info */
+.banking-panel__content p {
+    margin: 8px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #e4e4e4;
+}
+
+/* Nút Close hiện đại */
+.banking-panel__content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #7B86FF, #C87BFF);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(123,134,255,0.4);
+}
+.banking-panel__content button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(123,134,255,0.6);
+}
+
+/* Nút copy nhỏ */
+.copy-btn {
+    position: relative;
+    overflow: hidden; /* để ripple không tràn ra ngoài */
+    margin-left: 12px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #7B86FF, #C87BFF);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(123,134,255,0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.copy-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 18px rgba(123,134,255,0.6);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+/* Ripple hiệu ứng */
+.copy-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.6s ease, height 0.6s ease, opacity 0.8s ease;
+}
+.copy-btn:active::after {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+}
+
+/* Icon X ở góc */
+.close-icon {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
+.close-icon:hover {
+    color: #fff;
+    transform: rotate(90deg) scale(1.2);
+}
+
+
+/* Toast thông báo copy */
+#copyToast {
+    visibility: hidden;
+    min-width: 100px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 12px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.4s, bottom 0.4s;
+}
+#copyToast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+
+/* Hiệu ứng panel */
+@keyframes fadeIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media only screen and (max-width: 1100px) {
+    .section__shop {
+        padding: 50px 5% 80px;
+    }
+    .shop__title {
+        font-size: 38px;
+    }
+    .shop__description {
+        width: 100%;
+        font-size: 14px;
+        padding-top: 5px;
+    }
+    .shop__card__purchase {
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .shop__category {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 12px;
+    }
+}
